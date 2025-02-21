@@ -129,6 +129,7 @@ function M.show_report(arg)
     local buf = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, report_lines)
     vim.api.nvim_set_option_value('modifiable', false, { buf = buf })
+    vim.api.nvim_set_option_value('bufhidden', 'wipe', { buf = buf })
     vim.api.nvim_buf_set_name(buf, 'Playtime report')
 
     -- Calculate window dimensions
@@ -154,7 +155,7 @@ function M.show_report(arg)
       col = col,
       style = 'minimal',
     }
-    local win = vim.api.nvim_open_win(buf, false, win_opts)
+    local win = vim.api.nvim_open_win(buf, true, win_opts)
 
     -- Set window options
     vim.api.nvim_set_option_value('wrap', false, { win = win })
