@@ -168,11 +168,11 @@ function M.show_report(arg)
 
     vim.api.nvim_echo({
       { 'Playtime Summary:', 'Title' },
-      { 'Total: '..M.format_time(M.data.total_playtime), 'Normal' },
-      { 'Lines: '..tostring(M.data.total_lines), 'Normal' },
+      { ' Total: '..M.format_time(M.data.total_playtime), 'Normal' },
+      { ' Lines: '..tostring(M.data.total_lines), 'Normal' },
       { '\nToday:', 'Title' },
-      { 'Time: '..M.format_time(today_data.playtime), 'Normal' },
-      { 'Lines: '..tostring(today_data.lines), 'Normal' },
+      { ' Time: '..M.format_time(today_data.playtime), 'Normal' },
+      { ' Lines: '..tostring(today_data.lines), 'Normal' },
     }, true, {})
   end
 end
